@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Javascript</title>
+
+    <script>
+
+        function validarDados(){
+
+            if (document.getElementById("Nome").value == "") {
+
+                alert("O campo nome esta vazio");
+
+            }
+
+            if (document.getElementById("RG").value == "") {
+
+                alert("O campo RG esta vazio");
+
+            }
+
+            if (document.getElementById("CPF").value == "") {
+
+                alert("O campo CPF esta vazio");
+            }
+
+            var rgRegex = /^\d{2}\.\d{3}\.\d{3}-\d{1}$/;
+
+            if (!rgRegex.test(rg)) {
+
+                alert("O campo RG está em um formato inválido. Use o formato 00.000.000-X.");
+
+                return false;
+
+            }
+
+            var cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+
+            if (!cpfRegex.test(cpf)) {
+
+                alert("O campo CPF está em um formato inválido. Use o formato 000.000.000-00.");
+
+                return false;
+
+            }
+
+            return true;
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <form name="cadastrar" id="cadastrar" method="POST" action="">
+
+        Nome: <input type="text" name="nome" id="Nome"><br><br>
+
+        RG: <input type="text" name="Rg" id="Rg"><br><br>
+
+        CPF: <input type="text" name="cpf" id="cpf" ><br><br>
+
+        <button value="Cadastrar" name="Cadastrar" id="Cadastrar" onclick="validarDados()">Cadastrar</button><br><br>
+
+    </form>
+
+</body>
+
+</html>
